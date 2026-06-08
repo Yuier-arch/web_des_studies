@@ -1,0 +1,339 @@
+
+* { 
+    margin: 0;          /* Убираем отступы по умолчанию у всех элементов */
+    padding: 0;         /* Убираем внутренние отступы по умолчанию */
+    box-sizing: border-box;  /* Ширина включает padding и border */
+}
+
+body {
+    font-family: Arial, sans-serif;  /* Шрифт для всего текста */
+    line-height: 1.6;                /* Межстрочный интервал */
+    color: #333;                     /* Тёмно-серый цвет текста */
+    background-color: #f5f5f0;      /* Светлый фон страницы */
+}
+
+
+header { /*вид заголовка*/
+    background-color: #1a1a2e;   /* Тёмно-синий фон */
+    color: #C9A96E;              /* Золотой цвет текста */
+    text-align: center;          /* Текст по центру */
+    padding: 40px 20px;          /* Внутренние отступы: 40 сверху/снизу, 20 по бокам */
+}
+
+header h1 { /*размер заголовка первого типа*/
+    font-size: 2.5rem;           /* Размер заголовка (rem = относительно корневого шрифта) */
+    margin-bottom: 10px;          /* Отступ снизу */
+}
+
+header p { /* подзаголовок*/
+    font-size: 1.1rem;           /* Размер подзаголовка */
+    color: #f5f5f0;              /* Белый цвет */
+}
+
+/* меню */
+nav { /*для навигации*/
+    background-color: #fff;      /* Белый фон меню */
+    border-bottom: 3px solid #C9A96E;  /* Золотая линия снизу */
+    padding: 15px 0;             /* Отступы сверху и снизу */
+}
+
+nav ul { /*навигация как список*/
+    list-style: none;            /* Убираем маркеры списка */
+    text-align: center;          /* Центрируем пункты меню */
+}
+
+nav li {   /*элементы списка*/
+    display: inline-block;       /* Располагаем пункты в строку */
+    margin: 0 15px;              /* Отступы между пунктами */
+}
+
+nav a { /*вид ссылок*/
+    text-decoration: none;       /* Убираем подчёркивание ссылок */
+    color: #333;                 /* Цвет текста ссылок */
+    font-weight: bold;           /* Жирный шрифт */
+    padding: 5px 10px;           /* Внутренние отступы для увеличения области клика */
+}
+
+
+/* основной контент */
+main {
+    max-width: 1200px;           /* Максимальная ширина контента */
+    margin: 0 auto;              /* Центрирование по горизонтали */
+    padding: 40px 20px;          /* Внутренние отступы */
+}
+
+main h2 { /*для заголовков 2 типа*/
+    text-align: center;          /* Заголовок раздела по центру */
+    margin-bottom: 30px;         /* Отступ снизу */
+    color: #1a1a2e;              /* Тёмно-синий цвет */
+}
+
+
+.stories-container { /*контейнер для текста, ссылка на класс*/ 
+    display: flex;               /* Включаем Flexbox */
+    flex-wrap: wrap;             /* Разрешаем перенос на новую строку */
+    justify-content: space-between;  /* Распределяем равномерно */
+    gap: 25px;                   /* Расстояние между карточками */
+}
+
+
+.story-card { /*вид карточки*/
+    width: calc(33.333% - 17px); /* Ширина: 1/3 минус часть gap */
+    background-color: #fff;      /* Белый фон карточки */
+    border-radius: 10px;         /* Скругление углов */
+    overflow: hidden;            /* Обрезаем содержимое за границами */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);  /* Тень */
+    transition: transform 0.3s;  /* Плавная анимация при наведении */
+}
+
+
+.story-card img { /*форматирование картинки в карточке*/
+    width: 100%;                 /* Картинка на всю ширину карточки */
+    height: 200px;               /* Фиксированная высота */
+    object-fit: cover;           /* Обрезаем картинку, сохраняя пропорции */
+}
+
+.story-card h3 { /*заголовок карточки*/
+    padding: 15px 15px 5px;      /* Отступы: сверху, по бокам, снизу */
+    color: #1a1a2e;              /* Тёмно-синий цвет заголовка */
+}
+
+.story-card p { /*основной текст*/
+    padding: 0 15px 15px;        /* Отступы по бокам и снизу */
+    color: #666;                 /* Серый цвет текста */
+    font-size: 0.95rem;          /* Немного меньше основного текста */
+}
+
+.story-card a {
+    display: block;              /* Ссылка занимает всю ширину */
+    padding: 10px 15px 15px;     /* Отступы */
+    color: #C9A96E;              /* Золотой цвет */
+    text-decoration: none;       /* Без подчёркивания */
+    font-weight: bold;           /* Жирный шрифт */
+}
+
+.about-grid { /*основной блок grid*/
+    display: grid;                           /* Включаем CSS Grid */
+    grid-template-columns: 1fr 1fr;          /* Две равные колонки */
+    grid-template-rows: auto auto;           /* Высота по содержимому */
+    row-gap: 50px;  
+    column-gap: 30px;                             /* Отступ между ячейками */
+    max-width: 1000px;                       /* Макс. ширина сетки */
+    margin: 0 auto;                          /* Центрирование */
+}
+
+.about-block { /*основной блок*/
+    background-color: #fff; /*цвет фона блоков*/
+    border-radius: 10px; /*закругление углов*/
+    padding: 25px; /*отступ*/
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /*тень блока*/
+}
+
+.about-block h3 { /*заголовок*/
+    color: #1a1a2e;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.about-block p { /*вид шрифта основного текста*/
+    color: #666;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.about-block ul { /*отступ слева и цвет для списков*/
+    margin-left: 20px;
+    color: #666;
+}
+
+.about-block ul li { /*отступ для списков*/
+    margin-bottom: 8px;
+}
+
+
+
+.contacts-grid {
+    display: grid; /*подключение grid*/
+    /* Две колонки: левая уже, правая шире */
+    grid-template-columns: 1fr 2fr; 
+    /* Две строки: под контакты и соцсети */
+    grid-template-rows: auto auto; /*две колонки*/
+    gap: 25px;
+    max-width: 1000px; 
+    margin: 0 auto;
+    align-items: stretch;       /* Все блоки прижаты к верху */
+}
+
+
+/* Контакты: левая колонка, верхняя строка */
+.contact-info {
+    grid-column: 1;          /* Колонка 1 */
+    grid-row: 1;             /* Строка 1 */
+    align-self: start;
+    height: fit-content; /*вместить содержимое по высоте*/
+}
+
+/* Форма: правая колонка, обе строки (на всю высоту) */
+.contact-form-section {
+    grid-column: 2;          /* Колонка 2 */
+    grid-row: 1 / 3;         /* Захватывает строки 1 и 2 */
+    
+}
+
+/* Соцсети: левая колонка, нижняя строка */
+.contact-social {
+    grid-column: 1;          /* Колонка 1 */
+    grid-row: 2;             /* Строка 2 */
+    align-self: start;
+    height: fit-content;
+}
+
+/*общие стили блоков*/
+.contact-block { 
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+   
+}
+
+.contact-block h3 { /*для заголовка*/
+    color: #1a1a2e;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+/* Контакты */
+.contact-info p { /*текст контактов*/
+    margin-bottom: 12px;
+    color: #666;
+    line-height: 1.6; /*высота*/
+}
+
+.contact-form-section {
+    grid-column: 2; /*два столбца*/
+    grid-row: 1 / 3; /*занимает 2 строки из 3*/
+    display: flex;           /* Включаем Flexbox */
+    flex-direction: column;  /* Элементы в столбик */
+}
+
+/* Сама форма растягивается на всю высоту блока */
+.contact-form-section form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;            /* На всю высоту родителя */
+}
+
+/* Все поля — обычная высота */
+.contact-form-section .mb-3 {
+    flex-shrink: 0;
+}
+
+/* Textarea растягивается на ВСЁ оставшееся место */
+.contact-form-section textarea {
+    flex-grow: 1;
+    min-height: 100px;
+}
+
+/* Кнопка прижимается к низу */
+.contact-form-section button[type="submit"] {
+    flex-shrink: 0;
+    margin-top: auto;        /* Отодвигает кнопку вниз */
+}
+
+/* Форма Bootstrap */
+.bootstrap-form .form-label {
+    color: #333;
+    font-weight: 600;
+}
+
+.bootstrap-form .form-control, /*при hover, при нажатии*/
+.bootstrap-form .form-select {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.bootstrap-form .form-control:focus, /*при hover*/
+.bootstrap-form .form-select:focus { /*при нажатии*/
+    border-color: #C9A96E;
+    box-shadow: 0 0 0 0.2rem rgba(201, 169, 110, 0.25);
+}
+
+.bootstrap-form .btn-primary {
+    background-color: #C9A96E;
+    border-color: #C9A96E;
+    font-weight: 600;
+    padding: 12px;
+    transition: all 0.3s;
+}
+
+.bootstrap-form .btn-primary:hover { /*при наведении*/
+    background-color: #1a1a2e;
+    border-color: #1a1a2e;
+}
+
+.bootstrap-form .form-check-input:checked { /*при отправке*/
+    background-color: #C9A96E; /*цвет фона кнопки*/
+    border-color: #C9A96E; /*цвет обводки*/
+}
+
+/* Соцсети */ 
+.contact-social p { /*основной текст*/
+    color: #666; /*цвет*/
+    margin-bottom: 15px;/*внешний отступ*/
+}
+
+.social-buttons { /*кнопки соцсетей*/
+    display: flex;
+    gap: 10px; /*расстояние*/
+    flex-wrap: wrap; /*перенос*/
+}
+
+.social-btn { /*bootstrap*/
+    display: inline-block; 
+    padding: 10px 20px; /*отступ внутренний */
+    background-color: #1a1a2e;
+    color: #fff;
+    text-decoration: none; /*украшения текста*/
+    border-radius: 5px; /*углы*/
+    transition: background-color 0.3s; /*смена цвета*/
+}
+
+.social-btn:hover { /*кнопка при наведении*/
+    background-color: #C9A96E;
+}
+
+
+@media (max-width: 768px) { /*адаптивность*/
+    .contacts-grid {
+        grid-template-columns: 1fr;      /* Одна колонка */
+        grid-template-rows: auto auto auto; /* Три строки */
+    }
+    
+    /* Сбрасываем позиционирование на мобильных */
+    .contact-info,
+    .contact-form-section,
+    .contact-social {
+        grid-column: 1;
+        grid-row: auto;                   /* Автоматический порядок */
+    }
+    
+    .contact-form-section {
+        grid-row: 2;                     /* Форма между контактами и соцсетями */
+    }
+}
+
+footer { /*футер*/ 
+    background-color: #1a1a2e;   /* Тёмно-синий фон */
+    color: #f5f5f0;              /* Белый текст */
+    text-align: center;            /* По центру */
+    padding: 30px 20px;            /* Внутренние отступы */
+    margin-top: 40px;              /* Отступ сверху от основного контента */
+}
+
+footer p { /*текст*/
+    margin: 5px 0;               /* Небольшие отступы между строками */
+}
+
+
